@@ -6,8 +6,8 @@ void	_format(va_list args, const char s, int *length)
 		*length += _putchar(va_arg(args, int));
 	else if (s == 's')
 		_putstr(va_arg(args, char *), length);
-	// else if (s == 'p')
-		// length += _putptr(va_arg(args, unsigned long long));
+	else if (s == 'p')
+		_putptr(va_arg(args, unsigned long long), length);
 	else if (s == 'd' || s == 'i')
 		_putnbr(va_arg(args, int), length);
 	else if (s == 'u')
