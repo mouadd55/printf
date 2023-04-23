@@ -30,11 +30,11 @@ void	_format(va_list args, const char s, int *length)
 
 /**
  * _printf - produces output according to a format
- * @s: string
+ * @format: string
  * Return: number of characters printed
 */
 
-int _printf(const char *s, ...)
+int _printf(const char *format, ...)
 {
 	int	i;
 	int	length;
@@ -42,19 +42,19 @@ int _printf(const char *s, ...)
 
 	i = 0;
 	length = 0;
-	va_start(args, s);
-	while (s[i])
+	va_start(args, format);
+	while (format[i])
 	{
-		if (s[i] == '%')
+		if (format[i] == '%')
 		{
-			if (!s[++i])
+			if (!format[++i])
 				break;
 			--i;
-			_format(args, s[i + 1], &length);
+			_format(args, format[i + 1], &length);
 			i++;
 		}
 		else
-			length += _putchar(s[i]);
+			length += _putchar(format[i]);
 		i++;
 	}
 	va_end(args);
