@@ -1,5 +1,13 @@
 #include "_printf.h"
 
+/**
+ * _format - checks which char after %
+ * @s: character after the %
+ * @args: argument for the indentifier
+ * @length: pointer to count of characters printed
+ * Return: nothing
+*/
+
 void	_format(va_list args, const char s, int *length)
 {
 	if (s == 'c')
@@ -17,13 +25,19 @@ void	_format(va_list args, const char s, int *length)
 	else if (s == 'X')
 		_puthex(va_arg(args, unsigned int), 'X', length);
 	else if (s == '%')
-		*length += write (1, "%", 1);
+		*length += write(1, "%", 1);
 }
 
-int	_printf(const char *s, ...)
+/**
+ * _printf - produces output according to a format
+ * @s: string
+ * Return: number of characters printed
+*/
+
+int _printf(const char *s, ...)
 {
-	int		i;
-	int		length;
+	int	i;
+	int	length;
 	va_list	args;
 
 	i = 0;
@@ -34,7 +48,7 @@ int	_printf(const char *s, ...)
 		if (s[i] == '%')
 		{
 			if (!s[++i])
-				break ;
+				break;
 			--i;
 			_format(args, s[i + 1], &length);
 			i++;
@@ -46,3 +60,4 @@ int	_printf(const char *s, ...)
 	va_end(args);
 	return (length);
 }
+

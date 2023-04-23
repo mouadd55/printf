@@ -6,9 +6,9 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int		_printf(const char *s, ...);
+int	_printf(const char *s, ...);
 void	_puthex(unsigned int nbr, char format, int *length);
-int		_putchar(char c);
+int	_putchar(char c);
 void	_putnbr(int nbr, int *length);
 void	_putstr(char *str, int *length);
 void	_putptr(unsigned long long ptr, int *length);
