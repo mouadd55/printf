@@ -6,7 +6,7 @@
  * @length: pointer to count of characters printed
 */
 
-void	ft_puthex(unsigned long long nbr, int *length)
+void	ft_puthex(unsigned long nbr, int *length)
 {
 	int	i;
 	char	str[16];
@@ -34,7 +34,7 @@ void	ft_puthex(unsigned long long nbr, int *length)
  * @length: pointer to count of characters printed
 */
 
-void	_putptr(unsigned long long ptr, int *length)
+void	_putptr(unsigned long ptr, int *length)
 {
 	*length += write(1, "0x", 2);
 	if (!ptr)
