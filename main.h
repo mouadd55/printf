@@ -6,7 +6,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int	_printf(const char *s, ...);
+int	_printf(const char *format, ...);
 void	_puthex(unsigned int nbr, char format, int *length);
 int	_putchar(char c);
 void	_putnbr(int nbr, int *length);
