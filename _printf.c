@@ -4,8 +4,7 @@
  * _format - checks which char after %
  * @s: character after the %
  * @args: argument for the indentifier
- * @length: pointer to count of characters printed
- * Return: nothing
+ * @length: pointer to count the characters printed
 */
 
 void	_format(va_list args, const char s, int *length)
@@ -26,8 +25,6 @@ void	_format(va_list args, const char s, int *length)
 		_puthex(va_arg(args, unsigned int), 'X', length);
 	else if (s == '%')
 		*length += write(1, "%", 1);
-	else if (s == 'r')
-		*length += write(1, "%r", 2);
 	else
 		*length += write(1, &s, 1);
 }
@@ -55,9 +52,7 @@ int _printf(const char *format, ...)
 		{
 			if (!format[++i])
 				return (-1);
-			--i;
-			_format(args, format[i + 1], &length);
-			i++;
+			_format(args, format[i], &length);
 		}
 		else
 			length += _putchar(format[i]);

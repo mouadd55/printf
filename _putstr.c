@@ -3,8 +3,7 @@
 /**
  * _putstr - prints a string
  * @str: string to be printed
- * @length: pointer to count of characters printed
- * Return: nothing
+ * @length: pointer to count the characters printed
 */
 
 void    _putstr(char *str, int *length)
