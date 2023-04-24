@@ -26,6 +26,10 @@ void	_format(va_list args, const char s, int *length)
 		_puthex(va_arg(args, unsigned int), 'X', length);
 	else if (s == '%')
 		*length += write(1, "%", 1);
+	else if (s == 'r')
+		*length += write(1, "%r", 2);
+	else
+		*length += write(1, &s, 1);
 }
 
 /**
