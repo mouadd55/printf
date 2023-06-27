@@ -2,7 +2,7 @@
 
 /**
  * _putstr - prints a string
- * @str: string to be printed
+ * @str: string to be printed 
  * @length: pointer to count the characters printed
 */
 

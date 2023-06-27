@@ -2,7 +2,7 @@
 
 /**
  * _putnbr - prints an integer
- * @nbr: number to print
+ * @nbr: number to print 
  * @length: pointer to count of characters printed
 */
 

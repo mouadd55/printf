@@ -4,7 +4,7 @@
  * _puthex - prints the address of a variable
  * @nbr: the number to print
  * @format: x or X
- * @length: pointer to count of characters printed
+ * @length: pointer to count of characters printed 
 */
 
 void    _puthex(unsigned int nbr, char format, int *length)
