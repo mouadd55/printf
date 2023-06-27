@@ -15,6 +15,8 @@ void	_format(va_list args, const char s, int *length)
 		_putstr(va_arg(args, char *), length);
 	else if (s == 'p')
 		_putptr(va_arg(args, unsigned long), length);
+	else if (s == 'o')
+		_putoct(va_arg(args, unsigned int), length);
 	else if (s == 'd' || s == 'i')
 		_putnbr(va_arg(args, int), length);
 	else if (s == 'u')
