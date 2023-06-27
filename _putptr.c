@@ -36,10 +36,12 @@ void	ft_puthex(unsigned long nbr, int *length)
 
 void	_putptr(unsigned long ptr, int *length)
 {
-	*length += write(1, "0x", 2);
 	if (!ptr)
-		*length += write(1, "0", 1);
+		*length += write(1, "(null)", 6);
 	else
+	{
+		*length += write(1, "0x", 2);
 		ft_puthex(ptr, length);
+	}
 }
 
