@@ -13,7 +13,7 @@ void    _putstr(char *str, int *length)
 	i = -1;
 	if (!str)
 	{
-		*length += write(1, "(nil)", 5);
+		*length += write(1, "(null)", 6);
 		return;
 	}
 	while (str[++i])
