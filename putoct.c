@@ -15,8 +15,6 @@ void _putoct(unsigned int nb, int *length)
 
 	o = 0;
 	oct = malloc(sizeof(int) * 32);
-    if (!oct)
-        return ;
 	if (!nb)
 	{
         *length += _putchar('0');
