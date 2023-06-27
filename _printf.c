@@ -7,9 +7,8 @@
  * @length: pointer to count the characters printed
 */
 
-int	_format(va_list args, const char s, int *length)
+void	_format(va_list args, const char s, int *length)
 {
-	int	i = 0;
 	if (s == 'c')
 		*length += _putchar(va_arg(args, int));
 	else if (s == 's')
@@ -27,11 +26,7 @@ int	_format(va_list args, const char s, int *length)
 	else if (s == '%')
 		*length += write(1, "%", 1);
 	else
-	{
-		i = 1;
 		*length += write(1, &s, 1);
-	}
-	return (i);
 }
 
 /**
@@ -57,8 +52,7 @@ int _printf(const char *format, ...)
 		{
 			if (!format[++i])
 				return (-1);
-			if (_format(args, format[i], &length))
-				return (-1);
+			_format(args, format[i], &length);
 		}
 		else
 			length += _putchar(format[i]);
